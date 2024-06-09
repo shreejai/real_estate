@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -5,6 +6,7 @@ export default function Home() {
       <div className="text-3xl font-bold underline">
         Hello World
       </div>
+      <Footer/>
     </>
   );
 }
