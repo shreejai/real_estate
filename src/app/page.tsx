@@ -1,12 +1,11 @@
 import About from "@/components/About";
+import Banner1 from "@/components/Banner1";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <div className="text-3xl font-bold underline">
-        Hello World
-      </div>
+      <Banner1/>
       <About/>
       <Footer/>
     </>
