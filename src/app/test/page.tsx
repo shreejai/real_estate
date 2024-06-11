@@ -1,12 +1,15 @@
 'use client'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import PropertyCard from '@/components/PropertyCard'
 import { useEffect, useState } from 'react'
 
 type Property = {
   id: number;
   title: string;
-  amount: string; // Make sure to use amount instead of loc
+  amount: string;
+  beds: string;
+  bath: string;
 }
 
 const Test: React.FC = () => {
@@ -49,10 +52,13 @@ const Test: React.FC = () => {
       <div>Test</div>
       <ul>
         {properties.map(property => (
-          <li key={property.title}>
-            <h2>{property.title}</h2>
-            <p>ID: {property.id}</p>
-            <p>Amount: {property.amount}</p>
+          <li key={property.id} className='p-8 max-w-[900px] mx-auto'>
+            <PropertyCard 
+              title={property.title} 
+              beds={property.beds}
+              bath={property.bath}
+              amount={property.amount}
+            />
           </li>
         ))}
       </ul>
