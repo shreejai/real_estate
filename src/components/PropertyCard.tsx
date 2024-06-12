@@ -14,7 +14,7 @@ const PropertyCard = (props) => {
     <dl>
       <div>
         <dt className="sr-only">Price</dt>
-
+        <p>{id}</p>
         <dd className="text-sm text-gray-500">{amount?'$'+amount: 'Ask for price'}</dd>
       </div>
 

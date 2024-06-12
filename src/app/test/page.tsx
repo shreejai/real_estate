@@ -54,6 +54,7 @@ const Test: React.FC = () => {
         {properties.map(property => (
           <li key={property.id} className='p-8 max-w-[900px] mx-auto'>
             <PropertyCard 
+              id={property.id}
               title={property.title} 
               beds={property.beds}
               bath={property.bath}
