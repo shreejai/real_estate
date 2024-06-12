@@ -1,4 +1,5 @@
 'use client'
+import Filter from '@/components/Filter'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import PropertyCard from '@/components/PropertyCard'
@@ -62,18 +63,27 @@ const Test: React.FC = () => {
     <>
       <Navbar />
       <div>Test</div>
-      <ul>
-        {properties.map(property => (
-          <li key={property.id} className='p-8 max-w-[900px] mx-auto'>
-            <PropertyCard 
-              title={property.title} 
-              beds={property.beds}
-              bath={property.bath}
-              amount={property.amount}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className='listPage grid grid-cols-2 gap-4'>
+        <div className='listContainer'>
+          <Filter/>
+          <ul>
+            {properties.map(property => (
+              <li key={property.id} className='p-8 max-w-[900px] mx-auto'>
+                <PropertyCard 
+                  title={property.title} 
+                  beds={property.beds}
+                  bath={property.bath}
+                  amount={property.amount}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='mapContainer bg-green-200 rounded-lg mb-7'>
+            Map  
+        </div>
+      </div>
+      
       <div className="pagination w-fit mx-auto flex gap-4 mb-4">
         <button onClick={handlePreviousPage} disabled={currentPage === 1} className={` px-4 py-2 text-white rounded-lg ${currentPage === 1 ? 'bg-slate-500' : 'bg-orange-400'}`}>Previous</button>
         <span className='py-2 px-4'>Page {currentPage} of {totalPages}</span>
