@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import Slider from '@/components/slider/Slider'
 import Image from 'next/image'
 import React from 'react'
 
@@ -10,7 +11,8 @@ const SinglePage = () => {
     <div className='singlePage grid grid-cols-1 sm:grid-cols-2 px-8 py-4'>
       <div className="details p-10">
         <div className="wrapper">
-          <div className="info">
+          <Slider/>
+          <div className="info mt-[50px]">
             <div className="top flex justify-between">
               <div className="post flex flex-col gap-5">
                 <h1 className='text-2xl font-semibold'>Beautiful Apartment</h1>
