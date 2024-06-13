@@ -3,7 +3,8 @@ import Filter from '@/components/Filter'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import PropertyCard from '@/components/PropertyCard'
-import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+import { useEffect, useMemo, useState } from 'react'
 
 type Property = {
   id: number;
@@ -14,6 +15,15 @@ type Property = {
 }
 
 const Test: React.FC = () => {
+
+  const Map = useMemo(() => dynamic(
+    () => import('@/components/Map'),
+    { 
+      loading: () => <p>A map is loading</p>,
+      ssr: false
+    }
+  ), [])
+
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +90,7 @@ const Test: React.FC = () => {
           </ul>
         </div>
         <div className='mapContainer bg-green-200 rounded-lg mb-7'>
-            Map  
+            <Map properties={properties} position={[21.0499827, 79.0385908]} zoom={10} className="w-full h-full"/>
         </div>
       </div>
       
