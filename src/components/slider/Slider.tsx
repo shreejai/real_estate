@@ -11,6 +11,17 @@ const Slider = () => {
 
   return (
     <div className="slider w-full h-[350px] flex gap-5">
+      <div className="fullSlider absolute bg-black w-screen h-screen top-0 left-0 flex items-center justify-between">
+        <div className="arrow flex-[1]">
+          <Image src='/arrow.png' alt='' width={50} height={50}/>
+        </div>
+        <div className="imgContainer flex-[10]">
+          <Image src={images[0]} width={100} height={100} alt='' className='w-full h-full object-cover'/>
+        </div>
+        <div className="arrow flex-[1]">
+          <Image src='/arrow.png' alt='' width={50} height={50}/>
+        </div>
+      </div>
       <div className="bigImage flex-[3]">
         <Image src={images[0]} alt='' width={150} height={100} className='w-full h-full object-cover rounded-lg cursor-pointer'/>
       </div>
