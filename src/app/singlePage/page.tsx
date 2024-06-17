@@ -1,14 +1,16 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Slider from '@/components/slider/Slider'
+import { Map } from 'leaflet'
 import Image from 'next/image'
 import React from 'react'
+import './singlePage.css'
 
 const SinglePage = () => {
   return (
     <>
     <Navbar/>
-    <div className='singlePage grid grid-cols-1 sm:grid-cols-2 px-8 py-4'>
+    <div className='singlePage grid grid-cols-1 lg:grid-cols-2 px-8 py-4'>
       <div className="details p-10">
         <div className="wrapper">
           <Slider/>
@@ -33,7 +35,88 @@ const SinglePage = () => {
           </div>
         </div>   
       </div>
-      <div className="features bg-orange-50"></div>
+      <div className="features bg-orange-50">
+        <div className="wrapper">
+          <p className="title">General</p>
+          <div className="listVertical">
+            <div className="feature">
+              <img src="/utility.png" alt=''/>
+              <div className="featureText">
+                <span>Utilities</span>
+                <p>Renter is responsible</p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src="/pet.png" alt=''/>
+              <div className="featureText">
+                <span>Pet Policy</span>
+                <p>Pets allowed</p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src="/fee.png" alt=''/>
+              <div className="featureText">
+                <span>Property Fees</span>
+                <p>Must have 3x the rent in total household income</p>
+              </div>
+            </div>
+          </div>
+          <p className="title">Sizes</p>
+          <div className="sizes">
+            <div className="size">
+              <img src="/size.png" alt="size"/>
+              <span>1800sqft</span>
+            </div>
+            <div className="size">
+              <img src="/bed.png" alt="size"/>
+              <span>2 beds</span>
+            </div>
+            <div className="size">
+              <img src="/bath.png" alt="size"/>
+              <span>1 bathroom</span>
+            </div>
+          </div>
+          <p className="title">Nearby Places</p>
+          <div className="listHorizontal flex">
+            <div className="feature">
+              <img src="/school.png" alt="" />
+              <div className="featureText">
+                <span>School</span>
+                <p>250m away</p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src="/bus.png" alt="" />
+              <div className="featureText">
+                <span>Bus stop</span>
+                <p>100m away</p>
+              </div>
+            </div>
+            <div className="feature">
+              <img src="/restaurant.png" alt="" />
+              <div className="featureText">
+                <span>Restuarant</span>
+                <p>200m away</p>
+              </div>
+            </div>
+          </div>
+          <p className="title">Location</p>
+          <div className="mapContainer">
+            Map component
+          </div>
+          <div className="buttons">
+            <button>
+              <img src="/chat.png" alt=''/>
+              Send a message
+            </button>
+            <button>
+              {/* <img src="/save.png" alt=''/> */}
+              <Image src="/save.png" alt='' width={24} height={24}/>
+              Save the Place
+            </button>
+          </div>     
+        </div>
+      </div>
     </div>
     <Footer/>
     </>
