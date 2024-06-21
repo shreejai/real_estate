@@ -1,14 +1,17 @@
+import Image from 'next/image';
 import React from 'react'
 
 const PropertyCard = (props) => {
   const {id, title, beds, bath, loc, amount} = props;
   return (
     <a href="#" className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
-  <img
+  {/* <img
     alt=""
     src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
     className="h-56 w-full rounded-md object-cover"
-  />
+  /> */}
+  <Image alt='' width={100} height={56}
+  className='w-full max-w-[100%] h-56 object-cover' src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"/>
 
   <div className="mt-2">
     <dl>
