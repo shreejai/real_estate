@@ -1,12 +1,45 @@
+'use client'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Slider from '@/components/slider/Slider'
 import { Map } from 'leaflet'
 import Image from 'next/image'
-import React from 'react'
+import React, { useMemo } from 'react'
 import './singlePage.css'
+import dynamic from 'next/dynamic'
+
+type Property = {
+  id: number;
+  title: string;
+  amount: string;
+  beds: string;
+  bath: string;
+  lat: any;
+  lng: any;
+}
 
 const SinglePage = () => {
+
+  const properties: Property[] = [
+    {
+      id: 1,
+      title: "Cozy Cottage",
+      amount: "$120,000",
+      beds: "2",
+      bath: "1",
+      lat: 21.0499827,
+      lng: 79.0385908
+    }
+  ];
+
+  const Map = useMemo(() => dynamic(
+    () => import('@/components/Map'),
+    { 
+      loading: () => <p>A map is loading</p>,
+      ssr: false
+    }
+  ), [])
+
   return (
     <>
     <Navbar/>
@@ -102,7 +135,7 @@ const SinglePage = () => {
           </div>
           <p className="title">Location</p>
           <div className="mapContainer">
-            Map component
+            <Map properties={properties} position={[21.0499827, 79.0385908]} zoom={10} className='mb-8'/>
           </div>
           <div className="buttons">
             <button>
