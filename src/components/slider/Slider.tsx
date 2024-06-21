@@ -33,13 +33,13 @@ const Slider = () => {
 
       {imageIndex !== null && <div className="fullSlider absolute bg-black w-screen h-screen top-0 left-0 flex items-center justify-between">
         <div className="arrow flex-[1]">
-          <Image src='/arrow.png' alt='' width={50} height={50} onClick={() => changeSlide("left")}/>
+          <Image src='/arrow.png' alt='' width={50} height={50} onClick={() => changeSlide("left")} className='w-[20px] md:w-[30px] lg:w-[50px]'/>
         </div>
         <div className="imgContainer flex-[10]">
-          <Image src={images[imageIndex]} width={100} height={100} alt='' className='w-full h-full object-cover'/>
+          <Image src={images[imageIndex]} width={100} height={100} alt='' className='w-full h-full object-contain rounded-xl'/>
         </div>
         <div className="arrow flex-[1]">
-          <Image src='/arrow.png' className='rotate-180' alt='' width={50} height={50} onClick={() => changeSlide("right")}/>
+          <Image src='/arrow.png' className='rotate-180 w-[20px] md:w-[30px] lg:w-[50px]' alt='' width={50} height={50} onClick={() => changeSlide("right")}/>
         </div>
         <div className="close text-white absolute top-0 right-0 text-2xl font-bold p-[50px] cursor-pointer" onClick={() => setImageIndex(null)}>X</div>
       </div>}
