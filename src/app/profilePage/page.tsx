@@ -24,6 +24,7 @@ const page = () => {
               <h1>My List</h1>
               <button>Create New Post</button>
             </div>
+            <List/>
             <div className="title">
               <h1>Saved List</h1>
             </div>
