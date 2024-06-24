@@ -52,16 +52,15 @@ const PropertyCard = (props) => {
         </div>
       </div>}
 
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 bg-slate-200 p-2 rounded-lg">
+      {bath && <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 bg-slate-200 p-2 rounded-lg">
 
         <LuShowerHead size={20}/>
 
         <div className="mt-1.5 sm:mt-0">
           {/* <p className="text-gray-500">Bathroom</p> */}
-
-          <p className="font-medium">{bath?bath:'Not specified'}</p>
+          <p className="font-medium">{ bath !== 'Not specified'? bath : 'NA' }</p>
         </div>
-      </div>
+      </div>}
       { beds ? (
         <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 bg-slate-200 p-2 rounded-lg">
           <LuBed size={20}/>   
