@@ -91,7 +91,7 @@ const Test: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className='mapContainer bg-green-200 rounded-lg mb-7 h-60'>
+        <div className='mapContainer rounded-lg mb-7 sm:h-60 md:h-full pb-[30px]'>
             <Map properties={properties} position={[21.0499827, 79.0385908]} zoom={10} className="w-full h-full"/>
         </div>
       </div>
