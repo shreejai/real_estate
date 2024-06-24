@@ -12,6 +12,7 @@ type Property = {
   amount: string;
   beds: string;
   bath: string;
+  loc: string;
 }
 
 const Test: React.FC = () => {
@@ -72,8 +73,8 @@ const Test: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div>Test</div>
-      <div className='listPage grid grid-cols-2 gap-4'>
+      <div>&nbsp;</div>
+      <div className='listPage grid grid-cols-1 md:grid-cols-2 gap-4'>
         <div className='listContainer'>
           <Filter/>
           <ul>
@@ -84,12 +85,13 @@ const Test: React.FC = () => {
                   beds={property.beds}
                   bath={property.bath}
                   amount={property.amount}
+                  loc={property.loc}
                 />
               </li>
             ))}
           </ul>
         </div>
-        <div className='mapContainer bg-green-200 rounded-lg mb-7'>
+        <div className='mapContainer bg-green-200 rounded-lg mb-7 h-60'>
             <Map properties={properties} position={[21.0499827, 79.0385908]} zoom={10} className="w-full h-full"/>
         </div>
       </div>

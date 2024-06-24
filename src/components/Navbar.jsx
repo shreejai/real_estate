@@ -16,15 +16,23 @@ const Navbar = () => {
         </div>
   
         {/* Hide on mobile */}
-        <div className=" md:block">
+        <div className="hidden md:block">
           <nav aria-label="Global">
             <ul className="flex items-center gap-6 text-sm">
               <li>
                 <a
                   className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                  href="/"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                   href="/test"
                 >
-                  Test
+                  List
                 </a>
               </li>
   
@@ -42,7 +50,7 @@ const Navbar = () => {
                   className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                   href="/singlePage"
                 >
-                  Single View
+                  Details
                 </a>
               </li>
               
